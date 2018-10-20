@@ -2,64 +2,91 @@ body {
     width: 100%;
     height: 100%;
     margin: 0;
-    /**/
     background-color: #F8BBD0;
     /*background: hsl( calc(var(--html-scrollTop) / var(--html-scrollHeight) * 100), 75%, 50%);*/
-
-
 }
 
 
 .top-bar {
-    /*background-color: #E91E63;*/
-    /*background-color: #F8BBD0;*/
-    position: relative;
-    /*position: fixed;*/
-    height: 120px;
+    position: absolute;
+    background-color: rgba(255,255,255,0);
+    top:0;
     width: 100%;
-    transition: all 1s;
-    /*box-shadow: 0 0 16px rgba(0,0,0, 0.5) ;*/
+    height: 120px;
+    transition: all 0.5s;
+
+}
+
+
+.top-bar.past-120 {
+    background-color: white;
+    top: calc(var(--html-scrollTop) * 1px - 120px);
+    box-shadow: none ;
+}
+
+
+.top-bar.compact {
+    background-color: white;
+    top: calc(var(--html-scrollTop) * 1px - 120px + 60px);
+    box-shadow: 0 0 16px rgba(0,0,0, 0.5) ;
+
 }
 
 
 .back-button {
     color: white;
     position: absolute;
+    top: 75%;
+    margin-top: -16px;
+    margin-left: 35px;
+    width: 32px;
+    height: 32px;
+
+    transition: all 1s;
+}
+
+.full .back-button {
     top: 50%;
     margin-top: -25px;
     margin-left: 35px;
     width: 50px;
     height: 50px;
-    transition: all 1s;
-
 }
+
+.compact .back-button {
+    color: #37474F;
+}
+
 
 .top-bar .middle-section {
     max-width: 768px;
-    /*width: 768px;*/
     height: 120px;
     margin: 0 auto;
     display: flex;
-    /*background-color: red;*/
     flex-direction: column;
     align-items: center;
     justify-content: space-evenly;
-    transition: all 1s;
-
 }
 
-
-
 .title {
+    opacity: 0;
+    color: white;
+    font-family: 'Noto Sans';
+    font-size: 24px;
     height: 50px;
     line-height: 50px;
     display: inline-block;
-    color: white;
-    font-size: 24px;
-    font-family: 'Noto Sans';
     margin: 0;
-    transition: all 0.2s;
+    transition: all 1s;
 }
+
+
+
+.full .title {
+    opacity: 1;
+}
+
+
 
 
 .star-nav-container {
@@ -94,6 +121,10 @@ body {
     cursor: pointer;
 }
 
+.compact .page-nav a {
+    background: #37474F;
+}
+
 .page-nav a:hover {
     transform: scale(1.71);
     cursor: pointer;
@@ -103,6 +134,7 @@ body {
 .page-area {
     width: 100%;
     height: 100%;
+    margin-top: 120px;
     /*height: calc(100vh - 120px);*/
 }
 
@@ -172,64 +204,6 @@ body {
 }
 
 
-/*PAST 120*/
-
-
-.top-bar.past-120 {
-    height: 0;
-    position: fixed;
-
-}
-
-.past-120 .back-button {
-    color: #37474F;
-    position: absolute;
-    top: 50%;
-    margin-top: -32px;
-    margin-left: 35px;
-    width: 32px;
-    height: 32px;
-}
-
-.past-120 .middle-section {
-    margin-top: -120px;
-
-}
-/*
-COMPACT
-*/
-
-.top-bar.compact {
-    position: fixed;
-    height: 60px;
-    background-color: white;
-    box-shadow: 0 0 16px rgba(0,0,0, 0.5) ;
-}
-
-.compact .back-button {
-    color: #37474F;
-    position: absolute;
-    top: 50%;
-    margin-top: -16px;
-    margin-left: 35px;
-    width: 32px;
-    height: 32px;
-    transition: all 0.2s;
-}
-
-.compact .middle-section {
-    margin-top: -60px;
-
-}
-
-.compact .title {
-    /*display: none;*/
-}
-
-.compact .page-nav a {
-    background: #37474F;
-}
-
 
 /*
 SMALL SCREEN
@@ -254,7 +228,11 @@ SMALL SCREEN
     }
 
     .top-bar {
-        box-shadow: 0 0 16px rgba(0,0,0, 0.5) ;
+        /*box-shadow: 0 0 16px rgba(0,0,0, 0.5) ;*/
     }
 
+    .top-bar.full {
+        /*box-shadow: 0 0 16px rgba(0,0,0, 0.5) ;*/
+        border-bottom: 1px solid #CFD8DC;
+    }
 }
