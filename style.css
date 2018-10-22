@@ -57,6 +57,55 @@ body {
     color: #37474F;
 }
 
+/*.ellipsis {*/
+    /*color: white;*/
+    /*position: absolute;*/
+    /*top: 0;*/
+    /*right: 0;*/
+    /*margin-right: 16px;*/
+    /*margin-top: 24px;*/
+    /*width: 24px;*/
+    /*height: 24px;*/
+
+    /*transition: all 1s;*/
+/*}*/
+
+/*.full .ellipsis {*/
+    /*!*top: 50%;*!*/
+    /*!*margin-top: -24px;*!*/
+    /*!*margin-right: 35px;*!*/
+    /*width: 24px;*/
+    /*height: 24px;*/
+/*}*/
+
+/*.compact .ellipsis {*/
+    /*top: 50%;*/
+    /*margin-top: 16px;*/
+    /*color: #37474F;*/
+/*}*/
+
+.nav-arrows {
+    position: fixed;
+    top: 50%;
+    left: calc(50% - 472px);
+    width: 944px;
+    display: flex;
+    flex-direction: row;
+    justify-content: space-between;
+    /*transition: none;*/
+
+}
+
+.nav-arrows svg {
+    color: white;
+    height: 38px;
+    transition: transform 0.2s;
+}
+
+.nav-arrows svg:hover {
+    transform: scale(1.25);
+    cursor: pointer;
+}
 
 .top-bar .middle-section {
     max-width: 768px;
@@ -217,7 +266,43 @@ SMALL SCREEN
 
     .title {
         color: #37474F;
+        font-size: 19px;
+        max-width: 460px;
+        /*overflow: hidden;*/
+        text-overflow: ellipsis;
     }
+
+    .nav-arrows svg {
+        color: #37474F;
+        height: 38px;
+    }
+
+    .nav-arrows {
+        position: absolute;
+        width: 104px;
+        top: calc(60px - 19px );
+        left: auto;
+        right: 40px;
+        transition: all 1s;
+    }
+
+    .compact .nav-arrows svg {
+        color: #37474F;
+        height: 30px;
+    }
+
+    .compact .nav-arrows {
+        position: absolute;
+        width: 74px;
+        top: calc(120px - 45px );
+        left: auto;
+        right: 30px;
+        transition: all 1s;
+    }
+
+
+
+
 
     .page-nav a {
         background: #37474F;
@@ -226,6 +311,11 @@ SMALL SCREEN
     .back-button {
         color: #37474F;
     }
+
+
+    /*.ellipsis {*/
+        /*color: #37474F;*/
+    /*}*/
 
     .top-bar {
         /*box-shadow: 0 0 16px rgba(0,0,0, 0.5) ;*/

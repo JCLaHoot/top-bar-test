@@ -5,6 +5,7 @@
 
     let interval;
 
+    // action button scrolling event
     fab.addEventListener('click', () => {
         // topBar.classList.toggle('compact');
         window.scrollBy({behavior: "smooth"});
@@ -35,6 +36,15 @@
     });
 
 
+    //makes the scroll go all the way to the top when "changing pages". Unfortunately the animation isn't very smooth when scrolling fast
+    let pageIndicators = Array.from(document.querySelectorAll('.page-nav a'));
+    pageIndicators.forEach((indicator) => {
+       indicator.addEventListener('click', () => {
+           window.scrollTo(0, 0);
+       })
+    });
+
+
     let currentScrollY = 0;
 
 
@@ -44,12 +54,14 @@
     let below60;
 
 
+   // changes top-bar classes depending on scroll position.
    window.addEventListener('scroll', (event) => {
        newY = window.scrollY;
        scrollingUp = newY < currentScrollY;
        below120 = newY > 120;
        below60 = newY > 60;
 
+       // ⚠️ transition between compact top-bar and full top-bar happens here.
        if (!below60) {
            topBar.classList.add('full');
            topBar.classList.remove('compact')
@@ -78,9 +90,7 @@
                setTimeout(() => {
                        topBar.style.transition = 'none';
                }, 1000)
-               // topBar.addEventListener('transitionend', () => {
-               //     topBar.style.transition = 'none';
-               // }, {once: true});
+
            }
            topBar.classList.add('compact');
 
