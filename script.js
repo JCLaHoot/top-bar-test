@@ -94,7 +94,7 @@
            }
            topBar.classList.add('compact');
 
-           console.log('scrolling up');
+           // console.log('scrolling up');
        } else  {
            if (below120) {
                topBar.style.transition = null;
