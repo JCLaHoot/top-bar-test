@@ -6,33 +6,36 @@
     let interval;
 
     // action button scrolling event
+    // fab.addEventListener('click', () => {
+    //     // topBar.classList.toggle('compact');
+    //     window.scrollBy({behavior: "smooth"});
+    //
+    //         let goingDown = true;
+    //
+    //         if(interval) {
+    //             clearInterval(interval);
+    //             interval = null;
+    //         }
+    //         else {
+    //             interval = setInterval(()=> {
+    //                 if(window.scrollY < 250 && goingDown) {
+    //
+    //                     window.scrollBy(0, 1);
+    //                 }
+    //                 else  {
+    //                     goingDown = false;
+    //                     window.scrollBy(0, -1);
+    //                     if (window.scrollY === 0) {
+    //                         goingDown = true;
+    //                     }
+    //                 }
+    //             }, 15);
+    //         }
+    // });
+
+    //Action button changes page alignment
     fab.addEventListener('click', () => {
-        // topBar.classList.toggle('compact');
-        window.scrollBy({behavior: "smooth"});
-
-            let goingDown = true;
-
-            if(interval) {
-                clearInterval(interval);
-                interval = null;
-            }
-            else {
-                interval = setInterval(()=> {
-                    if(window.scrollY < 250 && goingDown) {
-
-                        window.scrollBy(0, 1);
-                    }
-                    else  {
-                        goingDown = false;
-                        window.scrollBy(0, -1);
-                        if (window.scrollY === 0) {
-                            goingDown = true;
-                        }
-                    }
-                }, 15);
-            }
-
-
+        topBar.classList.toggle('align-left');
     });
 
 

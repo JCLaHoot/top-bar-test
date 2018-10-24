@@ -117,6 +117,10 @@ body {
     justify-content: space-evenly;
 }
 
+.align-left .middle-section {
+    align-items: flex-start;
+}
+
 .title {
     opacity: 0;
     color: white;
@@ -300,6 +304,10 @@ SMALL SCREEN
         transition: all 1s;
     }
 
+
+    .align-left .middle-section {
+        max-width: 540px;
+    }
 
 
 
